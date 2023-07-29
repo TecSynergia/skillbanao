@@ -1,0 +1,34 @@
+@use "./modules/flex";
+@use "./modules/vrs";
+
+#login {
+  @include flex.flexbox;
+
+  #login-form {
+    @include flex.flexbox(column);
+
+    input {
+      margin: 10px;
+      width: 250px;
+      padding: 15px;
+      border-radius: 20px;
+      background-color: skyblue;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 10px;
+      border: none;
+      border-radius: 20px;
+      transition: all 0.3s ease-out;
+      background-color: orangered;
+      color: white;
+
+      &:hover {
+        box-shadow: vrs.$btn-shadow;
+      }
+    }
+  }
+}

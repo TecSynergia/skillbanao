@@ -1,0 +1,49 @@
+@use "./modules/flex";
+@use "./modules/vrs";
+
+#navbar {
+  @include flex.flexbox(row);
+  box-shadow: vrs.$prim-shadow;
+  border-radius: 10px;
+
+  .logo-title {
+    @include flex.flexbox;
+    cursor: pointer;
+  }
+
+  .content {
+    @include flex.flexbox(_, space-between);
+  }
+
+  .links {
+    @include flex.flexbox;
+    list-style: none;
+    padding: 0;
+
+    li:last-child a {
+      color: black;
+      background-color: vrs.$prim-color;
+      border-radius: 20px;
+      padding: 5px 8px;
+
+      &:hover {
+        box-shadow: vrs.$btn-shadow;
+      }
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      margin: 15px;
+      color: black;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        color: vrs.$prim-color;
+      }
+    }
+  }
+}
