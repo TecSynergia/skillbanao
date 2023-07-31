@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "../scss/Navbar.scss";
 
 function Navbar() {
@@ -11,7 +12,7 @@ function Navbar() {
           </div>
           <ul className="links">
             <li>
-              <a href="#">Chat with CA</a>
+              <NavLink to={'/chat-with-CA'}>Chat with CA</NavLink>
             </li>
             <li>
               <a href="#">Chat with Lawyer</a>
