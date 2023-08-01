@@ -1,12 +1,13 @@
 import React from 'react'
 import SearchBar from './SearchBar'
-import BestAstrologers from './BestAstrologers'
 import PersonDetails from './PersonDetails'
+import BestConsultancy from './BestConsultancy'
 
 function ChatWithCA() {
   return (
     <>
        <SearchBar/>
+       
        <PersonDetails/>
        <PersonDetails/>
        <PersonDetails/>
@@ -14,6 +15,9 @@ function ChatWithCA() {
        <PersonDetails/>
        <PersonDetails/>
        <PersonDetails/>
+
+       <BestConsultancy/>
+     
 
        
 
