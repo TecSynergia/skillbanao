@@ -7,21 +7,8 @@ function ChatWithCA() {
   return (
     <>
        <SearchBar/>
-       
        <PersonDetails/>
-       <PersonDetails/>
-       <PersonDetails/>
-       <PersonDetails/>
-       <PersonDetails/>
-       <PersonDetails/>
-       <PersonDetails/>
-
        <BestConsultancy/>
-     
-
-       
-
-       
     </>
   )
 }

@@ -1,12 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../scss/Navbar.scss";
+
 
 function Navbar() {
   return (
     <nav id="navbar">
       <div className="content-container">
         <div className="content">
-          <div className="logo-title">
+          <div className="logo-title" onClick="location.href='/'">
             <img src="" alt="logo" />
             <h1>SkillBanao</h1>
           </div>
