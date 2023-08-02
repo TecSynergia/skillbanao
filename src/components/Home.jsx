@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
 import HomeS2 from "./home/HomeS2";
 import HomeS1 from "./home/HomeS1";
 import HomeS3 from "./home/HomeS3";
@@ -10,7 +9,6 @@ import Pros from "./Pros";
 function Home() {
   return (
     <div className="Home">
-      <Navbar />
       <HomeS1 />
       <HomeS2 />
       <HomeS3 />
