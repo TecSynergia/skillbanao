@@ -1,4 +1,3 @@
-import '../../scss/HomeS2.scss';
 import Carousel from 'react-grid-carousel'
 
 function HomeS5() {

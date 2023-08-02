@@ -5,6 +5,7 @@ import HomeS4 from "./home/HomeS4";
 import HomeS5 from "./home/HomeS5";
 import HomeS6 from "./home/HomeS6";
 import Pros from "./Pros";
+import '../scss/Home.scss'
 
 function Home() {
   return (
