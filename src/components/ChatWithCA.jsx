@@ -1,7 +1,7 @@
 import React from 'react'
-import SearchBar from './SearchBar'
-import PersonDetails from './PersonDetails'
-import BestConsultancy from './BestConsultancy'
+import SearchBar from './Chat-with-CA/SearchBar'
+import PersonDetails from './Chat-with-CA/PersonDetails'
+import BestConsultancy from './Chat-with-CA/BestConsultancy'
 
 function ChatWithCA() {
   return (

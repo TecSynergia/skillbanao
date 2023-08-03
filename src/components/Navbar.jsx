@@ -25,9 +25,9 @@ function Navbar() {
               <a href="#">Skillmail</a>
             </li>
             <li>
-              <a href="#">
+              <NavLink to="/login">
                 <i class="bi bi-person-fill"></i>Login
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
