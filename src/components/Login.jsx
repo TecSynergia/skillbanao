@@ -1,9 +1,11 @@
 import "../scss/Login.scss";
 import google from '../assets/search.png'
+import Navbar from "./Navbar";
 
 function Login() {
   return (
     <div>
+      <Navbar />
       <div class="intro">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQNPZghaHW-xOa_OTlaJNnAG0GKRDvuNgkSIplUOyEAslm8ug" alt="no image" />
       </div>

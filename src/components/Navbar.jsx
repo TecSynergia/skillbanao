@@ -44,9 +44,9 @@ function Navbar() {
               <a href="#">Skillmail</a>
             </li>
             <li>
-              <a href="#">
-                <i class="bi bi-person-fill"></i>Login
-              </a>
+              <NavLink to={'/login'}>
+                <i class="bi bi-person-fill"></i>Loing
+                </NavLink>
             </li>
           </ul>
           <div className="nav-btn" onClick={shownavbar}>
