@@ -1,23 +1,14 @@
-
+import Prof from "../../assets/proffesional.jpeg";
+import Chat from "../../assets/chatcoin-chat-logo.png";
 function HomeS1() {
   return (
     <div id="section_1">
       <div className="poster">
-            <img src="" alt="" />
+        <img src={Prof} alt="" />
+        <div>Professionals at you Service</div>
       </div>
       <div className="boxes">
-        <div className="box">
-           <img src="https://picsum.photos/800/600?random=1" alt="" />
-           <span>Do Your Action</span>
-        </div>
-        <div className="box">
-           <img src="https://picsum.photos/800/600?random=1" alt="" />
-           <span>Do Your Action</span>
-        </div>
-        <div className="box">
-           <img src="https://picsum.photos/800/600?random=1" alt="" />
-           <span>Do Your Action</span>
-        </div>
+        Schedule your chat now <img src={Chat} alt="" />
       </div>
     </div>
   );
