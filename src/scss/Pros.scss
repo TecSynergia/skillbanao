@@ -56,6 +56,6 @@
 
 @media only screen and (max-width: 1140px) {
   #section-1 .content .pros-grid {
-    @include grid.gridbox(3, 15px);
+    @include grid.gridbox(1, 15px);
   }
 }

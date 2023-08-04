@@ -1,6 +1,7 @@
 import React from 'react'
 import profile from '../../assets/profile.webp'
 import './PersonDetails.scss'
+import { NavLink } from 'react-router-dom'
 
 const Profilecard = () =>
 {
@@ -30,7 +31,7 @@ const Profilecard = () =>
                 </div>
                 <div className="chatBtn">
                     <i className="bi bi-check-circle-fill"></i>
-                    <button>Chat</button>
+                    <NavLink to = {'/chat'}><button>Chat</button></NavLink> 
                 </div>
             </div>
             )}

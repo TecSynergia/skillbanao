@@ -26,4 +26,9 @@ footer{
             }
         }
     }
+    @media (max-width: 799px) {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
 }

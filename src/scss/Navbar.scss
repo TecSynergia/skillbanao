@@ -9,10 +9,24 @@
   .logo-title {
     @include flex.flexbox;
     cursor: pointer;
+    width: 200px;
+    img{
+      width: 100%
+    }
+  }
+
+  .nav-btn 
+  {
+    display: none
+  }
+  .nav-btn-close
+  {
+    display: none;
   }
 
   .content {
     @include flex.flexbox(_, space-between);
+    align-items: flex-end;
   }
 
   .links {
@@ -43,6 +57,55 @@
 
       &:hover {
         color: vrs.$prim-color;
+      }
+    }
+  }
+
+  // adding mobile view
+  @media (max-width: 799px) {
+    padding: 10px 20px;
+    .content
+    {
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-btn
+    {
+      display: block;
+    }
+    .navbtnclose
+    {
+      display: block;
+    }
+
+    .links 
+    {
+      display: none;
+      flex-direction: column;
+      background-color: rgb(133, 133, 255);
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      box-sizing: border-box;
+      z-index: 10;
+      justify-content: space-evenly;
+      overflow-y: auto;
+      
+      li 
+      {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: flex-end;
+        padding: 20px;
+        a 
+        {
+          text-align: r;
+          font-size: 24px;
+          color: white;
+        }
       }
     }
   }

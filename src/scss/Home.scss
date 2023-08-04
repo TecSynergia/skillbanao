@@ -83,7 +83,7 @@
     {
     width: 90%;
     background-color:var(--themeblue1);
-
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -126,6 +126,7 @@
     background-color: var(--themeblue1);
     padding: 20px 0;
     h1{color:white}
+
     .postes 
     {
         width: 900px;
@@ -136,6 +137,12 @@
         grid-auto-rows: 60px;
         align-content: center;
         gap:10px;
+
+        @media (max-width: 599px) {
+            width: 100%;
+            grid-template-columns: 1fr;
+            align-items: center;
+        }
     }
     .box 
     {
@@ -148,6 +155,9 @@
         border-radius: 5px;
         height: 60px;
         justify-content: center;
+        @media (max-width: 599px) {
+            width: 100%;
+        }
     }
     .box img 
     {
@@ -163,7 +173,9 @@
     padding: 20px 0;
     background-color: rgb(240, 240, 240);
     overflow: hidden;
-    
+    @media (max-width: 599px) {
+        width: 100%;
+    }
     .carousel
     {
         width: 80%;
@@ -172,8 +184,10 @@
         display: flex;
         justify-content: center;
         box-sizing: border-box;
+        overflow: hidden;
     }
     .carousel-item{
+        
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
@@ -182,6 +196,9 @@
         box-sizing: border-box;
         background-color: var(--themeblue1);
         color: white;
+        @media (max-width: 599px) {
+            width:300px;
+        }
     }
     img 
     {
@@ -203,21 +220,46 @@
     align-items: center;
     padding: 20px 0;
     border-radius: 10px;
-    .carousel 
+    gap: 10px;
+    @media (max-width: 599px) {
+        width: 100%;
+        overflow: hidden;
+    }
+    .carousel
+    {
+        width: 90%;
+        box-sizing: border-box;
+        margin:0 auto;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    .carousel-item
     {
         width: 80%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        display: flex;
+        margin-left: 30px;
+        align-items: center;
+        h1{color:white}
+        background-color: white;
+        padding: 10px;
+   
     }
-    .carousel-item 
-    {
-        background-color:whitesmoke;
-        border-radius: 10px;
-    }
-    img 
+    .carousel-item img 
     {
         width: 100px;
         height: 100px;
-        object-fit: cover;
         border-radius: 50px;
+
+    }
+    .carousel-item p 
+    {
+   
+    text-align: justify;
     }
 }
 }

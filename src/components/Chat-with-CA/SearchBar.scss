@@ -1,10 +1,13 @@
 $rechargeColor: rgb(4, 123, 4);
 
 .searchContent{
-    margin: 20px 200px;
     display: flex;
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto;
     flex-direction: row;
     justify-content: space-between;
+    box-sizing: border-box;
     .chatHeading{
         display: flex;
         flex-direction: row;
@@ -77,5 +80,14 @@ $rechargeColor: rgb(4, 123, 4);
             // }
         }
       
+    }
+    @media (max-width: 799px) {
+        width: 100%;
+        padding: 0 20px;
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap:20px;
     }
 }

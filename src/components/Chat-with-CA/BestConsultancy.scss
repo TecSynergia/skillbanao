@@ -57,5 +57,17 @@
                 }
             }
         }
+       
+    }
+    @media (max-width: 799px) {
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .astrologerCards
+        {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
