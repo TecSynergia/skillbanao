@@ -13,6 +13,8 @@ function App() {
           <Route path='/chat-with-CA' element={<ChatWithCA />} />
           <Route path="/chat" element={<Chat /> } />
           <Route path='/login' element={<Login />} />
+          <Route path='/welcome' element={<FirstSignUp />} />
+          <Route path='/users' element={<UserList />} />
         </Routes>
     </BrowserRouter>
   )
