@@ -30,8 +30,7 @@ const Profilecard = () =>
                     </div>
                 </div>
                 <div className="chatBtn">
-                    <i className="bi bi-check-circle-fill"></i>
-                    <NavLink to = {'/chat'}><button>Chat</button></NavLink> 
+                    <NavLink to = {'/chat'}><button><i className="bi bi-check-circle-fill"></i> Chat</button></NavLink> 
                 </div>
             </div>
             )}

@@ -30,113 +30,92 @@
     }
 }
 
+/* App.css */
+
 .form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20vh;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  @media (max-width: 767px) {
+    margin-top: 0;
+    height: 100vh;
+  }
+}
+
+.logo-image {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  margin-bottom: 15px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.upload-button {
+  margin-bottom: 15px;
+}
+
+.custom-button {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+
+  button 
+  {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  form {
-    background-color: white;
-    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-  }
-  
-  .form-field {
-    margin-bottom: 20px;
-  }
-  
-  .input-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input,
-  select {
-    display: block;
-    padding: 10px;
-    border: 1px solid #ccc;
+    text-align: center;
     border-radius: 5px;
-    width: 100%;
-  }
-  
-  .radio-group {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-  }
-  
-  .radio-group label {
-    margin-right: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  
-  .radio-group input[type="radio"] {
-    margin-right: 5px;
-  }
-  
-  .radio-group label:hover {
-    color: #0074d9;
-  }
-  
-  .uploaded-image {
-    max-width: 50%;
-    margin: 0 auto;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  .upload-btn {
-    background-color: #0074d9;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .upload-btn:hover {
-    background-color: #0056a9;
-  }
-  
-  .button-group {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .send-button,
-  .go-back-button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
   }
-  
+  button:hover {
+    background-color: #eee;
+  }
   .send-button {
-    background-color: #0074d9;
-    color: white;
+    background-color: #52c41a;
+    border-color: #52c41a;
+    color: #fff;
   }
   
   .go-back-button {
-    background-color: #d3d3d3;
+    background-color: #f0f2f5;
+    border-color: #f0f2f5;
     color: #333;
   }
-  
-  .send-button:hover,
-  .go-back-button:hover {
-    background-color: #0056a9;
-  }
-  
+}
+
+
+
+

@@ -1,115 +1,135 @@
 import React, { useState } from 'react';
-import './Form.scss';
+import { Form, Input, Select, Radio, Upload, Button } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../images/logo.png';
+import './Form.scss';
 
-const Professional = () => {
+const { Option } = Select;
+
+const App = () => {
   const [name, setName] = useState('');
   const [role, setRole] = useState('');
   const [gender, setGender] = useState('');
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    const imageUrl = URL.createObjectURL(file);
-    setImage(imageUrl);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('role', role);
+      formData.append('gender', gender);
+      formData.append('image', image); // Add image data to formData
+      formData.append('phoneNumber', phoneNumber);
+
+      const response = await fetch('/add-user', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.status == 201) {
+        // Handle successful response, navigate to a new page
+        alert("Successfully Added");
+        navigate('/success');
+      } else {
+        console.error(response);
+      }
+    } catch (error) {
+      // Handle fetch error
+      console.error('Fetch error:', error);
+    }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here
+  const handleimageUpload = (info) => {
+    if (info.file.status === 'done') {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setPhoto(e.target.result);
+      };
+      reader.onerror = (error) => {
+        console.error('Error reading the image:', error);
+      };
+      reader.readAsDataURL(info.file.originFileObj);
+    }
   };
+  
+
+  const handleimageChange = (info) => {
+    if (info.file.status === 'done') {
+      // Update the image state after successful upload
+     setImage(info.file.response.url);
+    }
+  };
+
 
   const handleReload = () => {
-    window.location.reload();
+    navigate(0); // Navigate to home page using navigate
   };
 
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit}>
-      <img id="logo" src={logo} alt="" />
+      <Form onSubmit={handleSubmit}>
+        <img id="logo" src={logo} alt="" />
         <h2>Start As Professional</h2>
-        <div className="form-field">
-          <label className="label">Name</label>
-          <input
-            type="text"
+        <Form.Item label="Name">
+          <Input
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
-        </div>
-        <div className="form-field">
-          <label className="label">Role</label>
-          <select
+        </Form.Item>
+        <Form.Item label="Role">
+          <Select
             value={role}
-            onChange={(e) => setRole(e.target.value)}
+            onChange={(value) => setRole(value)}
             required
           >
-            <option value="">Select Role</option>
-            <option value="CA">CA</option>
-            <option value="Lawyer">Lawyer</option>
-          </select>
-        </div>
-        <div className="form-field">
-          <label className="label">Gender</label>
-          <div className="radio-group">
-            <label>
-              <input
-                type="radio"
-                value="male"
-                checked={gender === 'male'}
-                onChange={(e) => setGender(e.target.value)}
-              />
-              Male
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="female"
-                checked={gender === 'female'}
-                onChange={(e) => setGender(e.target.value)}
-              />
-              Female
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="other"
-                checked={gender === 'other'}
-                onChange={(e) => setGender(e.target.value)}
-              />
-              Other
-            </label>
-          </div>
-        </div>
-        <div className="form-field">
-          <label className="label">Upload Profile Pic</label>
-          <input
-            type="file"
+            <Option value="">Select Role</Option>
+            <Option value="CA">CA</Option>
+            <Option value="Lawyer">Lawyer</Option>
+          </Select>
+        </Form.Item>
+        <Form.Item label="Gender">
+          <Radio.Group
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+          >
+            <Radio value="male">Male</Radio>
+            <Radio value="female">Female</Radio>
+            <Radio value="other">Other</Radio>
+          </Radio.Group>
+        </Form.Item>
+        <Form.Item label="Upload Profile Pic">
+          <Upload
             accept="image/*"
-            onChange={handleImageUpload}
-          />
+            customRequest={handleimageUpload}
+            showUploadList={false}
+            onChange={handleimageChange}
+          >
+            <Button icon={<UploadOutlined />}>Upload</Button>
+          </Upload>
+
           {image && <img className="uploaded-image" src={image} alt="Uploaded" />}
-        </div>
-        <div className="form-field">
-          <label className="label">Phone Number</label>
-          <input
-            type="text"
+        </Form.Item>
+        <Form.Item label="Phone Number">
+          <Input
             value={phoneNumber}
             pattern="[0-9]{10}"
             onChange={(e) => setPhoneNumber(e.target.value)}
             required
           />
-        </div>
+        </Form.Item>
         <div className="button-group">
-          <button type="submit" className="send-button">Send</button>
-          <button type="button" className="go-back-button" onClick={handleReload}>
-            Back
-          </button>
+          <Button type="primary" htmlType="submit" onClick={handleSubmit}>Send</Button>
+          <Button onClick={handleReload}>Back</Button>
         </div>
-      </form>
+      </Form>
     </div>
   );
-};
+}
 
-export default Professional;
+export default App;
